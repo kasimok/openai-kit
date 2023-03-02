@@ -1,7 +1,7 @@
 import Foundation
 
 /**
- List and describe the various models available in the API. 
+ List and describe the various models available in the API.  More Canbe found at https://platform.openai.com/docs/models
  */
 public struct Model: Codable {
     public let id: String
@@ -35,6 +35,19 @@ public protocol ModelID {
 }
 
 extension Model {
+    
+    public enum GPT3_5: String, ModelID {
+        case gpt3_5_turbo = "gpt-3.5-turbo"
+        case gpt3_5_turbo_030 = "gpt-3.5-turbo-030"
+        case text_davinci_003 = "text-davinci-003"
+        case text_davinci_002 = "text-d
+        case code_davinci_002 = "code-davinci-002"
+
+        public var id: String {
+            rawValue
+        }
+    }
+    
     public enum GPT3: String, ModelID {
         case textDavinci003 = "text-davinci-003"
         case textDavinci002 = "text-davinci-002"
